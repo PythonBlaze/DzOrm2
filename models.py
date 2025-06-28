@@ -13,9 +13,9 @@ class Teacher(models.Model):
 
 
 class Student(models.Model):
-    name = models.CharField(max_length=30, verbose_name='Имя')
-    teachers = models.ManyToManyField(Teacher, verbose_name='Учителя')
-    group = models.CharField(max_length=10, verbose_name='Класс')
+    name = models.CharField(max_length=100)
+    group = models.CharField(max_length=50)
+    teachers = models.ManyToManyField('Teacher', related_name='students')
 
     class Meta:
         verbose_name = 'Ученик'
